@@ -3,8 +3,13 @@ language: node_js
 node_js:
   - "8"
 
+cache:
+  directories:
+    - $HOME/.npm
+
 before_script:
-  - npm install -g gitbook gitbook-cli
+  - npm install -g gitbook-cli
+  - gitbook install
 
 script:
   - gitbook build
@@ -17,9 +22,6 @@ deploy:
   target_branch: gh-pages
   on:
     branch: master
-env:
-  global:
-    secure: CvMUXpXufySRBfOrGSjLiASNKLBOzIV65lReAg9roBp09dPeGcaoElntXWuVQchXrXvwAgAoIVAyoHS2G35uGirBpPyacZ4BJDx7fS9emGYyGA6j2wLEfOEMH1xbEIWKkE+SevCCBGeMbrnKMdi5UUDYNtZ7dp/W1zyqLAbxFb5QuLv+0YbvxdjzYeFSbBuTS8KxYYpOsTRKcrNt4Qt6ZUBknluCKzJmQNNu2wd14AR+LvtrCCeQHjrGXfLedTkypjTlsws1a7qiPZy99MXxm4qHGSA6dacuANlInC72l3GGPKzRkTpbkUvUTaQLD2LkFDyY6z1nsS5uZT0/zAlte93o5gyCRo8bAzh4m7sdrAgAAgtTmr24YSb4iHYQOO/I8ELLwY9vik+o7v6iYO1OkHu0/monkFLuekOQnfCtTB3Z9MOGS1oYQ3E+mayqTGcg/OZ3ZwVfrEk/ToCd0e6DVgEhf+Dt0SzxK1cSAZQr/f2CslitmgL0Y/z6sDmbSjJ+NKgjSuQuRrh+EPEyRY2lzKjztqVx0irjE/zPL6URzslhAnT8GLf9of+w8570XA6oAx3JcoBWvChyQf8FJq1+xLxI5sz9I6CGc5a9mSXVOv9gheBHJCjXO22g0rzdHWgcRxEaAk7tiNz9aCYorsBfuiQVxTq+GEY9hwwJLvBmPFA=
 notifications:
   email:
     on_success: never
