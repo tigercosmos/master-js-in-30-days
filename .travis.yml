@@ -1,4 +1,7 @@
 sudo: true
+language: node_js
+node_js:
+- "8"
 script:
 - sudo npm install -g gitbook gitbook-cli
 - gitbook build
