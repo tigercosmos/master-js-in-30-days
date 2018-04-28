@@ -1,5 +1,5 @@
 # Summary
 
-* [書本介紹](README.md)
+* [30 天 Javascript 從入門到進階](README.md)
 * 目錄
 
