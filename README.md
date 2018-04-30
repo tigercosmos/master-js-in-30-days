@@ -1,5 +1,7 @@
 # 30 天 Javascript 從入門到進階
 
+[![Build Status](https://travis-ci.org/tigercosmos/master-js-in-30-days.svg?branch=master)](https://travis-ci.org/tigercosmos/master-js-in-30-days)
+
 這是一本給初學者的 Javascript 教學書，落實閱讀與練習持續 30 天，進入 JavaScript 的世界！
 
 ## 作者
