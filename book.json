@@ -4,20 +4,31 @@
     "author": "tigercosmos",
     "plugins": [
         "expandable-chapters",
-        "github-buttons@2.1.0",
-        "github"
+        "github-buttons@3.0.0",
+        "github",
+        "disqus"
     ],
     "pluginsConfig": {
         "github-buttons": {
-            "repo": "tigercosmos/master-js-in-30-days",
-            "types": [
-                "star",
-                "fork"
-            ],
-            "size": "small"
+            "buttons": [{
+                "user": "tigercosmos",
+                "repo": "master-js-in-30-days",
+                "type": "star",
+                "size": "small",
+                "count": true                
+            }, {
+                "user": "tigercosmos",
+                "type": "follow",
+                "width": "180",
+                "size": "small",                
+                "count": true
+            }]
         },
         "github": {
             "url": "https://github.com/tigercosmos/"
+        },
+        "disqus": {
+            "shortName": "master-js-in-30-days"
         }
     }
 }
