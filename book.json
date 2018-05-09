@@ -6,7 +6,8 @@
         "expandable-chapters",
         "github-buttons@3.0.0",
         "github",
-        "disqus"
+        "disqus",
+        "codeblock-filename"
     ],
     "pluginsConfig": {
         "github-buttons": {
