@@ -128,6 +128,6 @@ const area = hieght * width; // 24
 
 ## 參考與延伸資料
 
-[^1] [Wiki: 值 (電腦科學)](https://zh.wikipedia.org/wiki/%E5%80%BC_(%E9%9B%BB%E8%85%A6%E7%A7%91%E5%AD%B8)
-[^2] [Wiki: 強弱型別](https://zh.wikipedia.org/wiki/%E5%BC%B7%E5%BC%B1%E5%9E%8B%E5%88%A5)
-[^3] [W3C JS: variables](https://www.w3schools.com/jS/js_variables.asp)
+[^1]: [Wiki: 值 (電腦科學)](https://zh.wikipedia.org/wiki/%E5%80%BC_(%E9%9B%BB%E8%85%A6%E7%A7%91%E5%AD%B8)
+[^2]: [Wiki: 強弱型別](https://zh.wikipedia.org/wiki/%E5%BC%B7%E5%BC%B1%E5%9E%8B%E5%88%A5)
+[^3]: [W3C JS: variables](https://www.w3schools.com/jS/js_variables.asp)
