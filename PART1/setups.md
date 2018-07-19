@@ -12,7 +12,7 @@ Windows 的話可以左下角搜尋 cmd 便可以找到命令提示字元。或�
 
 不管是哪個作業系統打開後都會長得差不多，這邊用 PowerShell 為例：
 
-![powershell](img/powershell.jpg)
+![powershell](img/powershell.JPG)
 
 ## 環境建設
 
@@ -26,7 +26,7 @@ Windows 的話可以左下角搜尋 cmd 便可以找到命令提示字元。或�
 
 如果你是使用 Windows 或是 macOS 的話，步驟非常簡單，只要到 [NodeJS](https://nodejs.org/en/) 官網點 LTS(長期維護版) 或是 Current(最新版) 就可以下載。兩者皆可，在我們現階段學習並無差別。
 
-![Node JS Home](img/nodejs_home.jpg)
+![Node JS Home](img/nodejs_home.JPG)
 
 接著會下載安裝執行檔，就照著安裝步驟一步一步走就可以順利安裝。
 
