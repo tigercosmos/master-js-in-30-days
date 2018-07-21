@@ -8,7 +8,7 @@
   - 程式語言與 Javascript 簡介(尚未)
   - [環境建設與執行第一個程式](PART1/setups.md)
   - [變數、資料型態以及算術運算式](PART1/variables.md)
-  - 選擇判斷(尚未)
+  - [條件判斷](PART1/condition.md)
   - 迴圈(尚未)
   - 陣列(尚未)
   - 物件(尚未)
