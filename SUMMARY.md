@@ -9,7 +9,7 @@
   - [環境建設與執行第一個程式](PART1/setups.md)
   - [變數、資料型態以及算術運算式](PART1/variables.md)
   - [條件判斷](PART1/condition.md)
-  - 迴圈(尚未)
+  - [迴圈](PART1/loop.md)
   - 陣列(尚未)
   - 物件(尚未)
   - 函式(尚未)
