@@ -119,7 +119,7 @@ console.log(names);
 
 ```js
 const names = ["Jenny", "Tiger", "Leo"];
-names = ["Cat", "Dog"]; // 錯誤，不可直接替換成另一個陣列
+names = ["Cat", "Dog"]; // 錯誤，不可直接將 const 的陣列替換成另一個陣列
 names[0] = ["Meow"]; // 可以，因為對元素操作，不算改變陣列本身
 ```
 
@@ -195,7 +195,7 @@ const b = a;  // b = 5
 const arr1 = [1, 2, 3];
 const arr2 = arr1;
 
-arr1[0] = 100;
+arr1[0] = 100;     // 改動 arr1 第 0 元素
 console.log(arr1); // [100, 2, 3]
 console.log(arr2); // [100, 2, 3]
 ```
@@ -227,9 +227,9 @@ for(let i = 0; i < arr1.length; i++) {
 }
 ```
 
-我們直接用迴圈一個一個複製，因為單一變數複製時，記憶體會是不一樣的。`arr2` 原本是空的，我們直接對 `arr2[0]` 等位置操作，可以直接讓沒有元素的位置有東西。
+我們直接用迴圈一個一個複製，因為單一變數複製時，記憶體會是不一樣的。`arr2` 原本是空的，我們直接對 `arr2[i]` 位置操作，可以直接讓沒有元素的位置有東西。
 
-要注意的是，如果陣列原本是 `[]`，直接在編號 `i` 位置插入值的話，陣列就會變成長度 `i`，中間會是 `undefined`。
+要注意的是，如果陣列原本是空的 `[]`，直接在編號 `i` 位置插入值的話，陣列就會變成長度 `i`，中間會是 `undefined`。
 
 例如：
 
@@ -252,7 +252,7 @@ const arr1 = [1, 2, 3];
 const arr2 = [...arr1];
 
 arr1[0] = 40;
-console.log(arr2[0]); // 1
+console.log(arr2[0]); // 1，並沒有因為 arr1 改了 而改變
 ```
 
 `...array` 是直接複製目標 `array` 的語法。
@@ -318,18 +318,22 @@ console.log(names);
 
 那假設我們今天想要在陣列**中間**插入新的值或是刪掉某個元素呢？
 
-我們可以透過 `array.slice(from, to)` 語法，會擷取新的陣列出來（不影響原本陣列）。
+我們可以透過 `array.slice(from, to)` 語法，會擷取新的陣列出來（不影響原本陣列）。其中擷取的陣列會包含 `from` 那個位置，不包含 `to` 那個位置，之間的所有元素。
 
 ```js
 const origin = [1, 2, 3, 4, 5, 6, 7];
-         // 編號 0  1  2  3  4  5  6
+         // 編號 0  1  2  3  4  5  6  7
 
-const part1 = origin.slice(0, 4); // 擷取 origin 0 到 4 的元素
+const part1 = origin.slice(0, 4); // 擷取 origin 編號 0 到 4 間的元素
+                                  // 1, 2, 3, 4 (不包含編號 4，所以沒 5)
 
-const part2 = origin.slice(5, 6);
+const part2 = origin.slice(5, 6); // 擷取 origin 編號 5 到 7 間的元素
+                                  // 6, 7
 
 const newArr = [...part1, 44, 55, ...part2];
-// [ 1, 2, 3, 4, 44, 55, 6 ]
+
+console.log(newArr);
+// [ 1, 2, 3, 4, 44, 55, 6, 7]
 ```
 
 ## 警告
