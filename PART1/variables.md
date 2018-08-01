@@ -90,14 +90,14 @@ console.log(string); // Hello
 console.log(isStudent); // true
 ```
 
-雖然印出來看不出來他是什麼型別，但你可以用 `typeof()` 函數來檢查
+雖然印出來看不出來他是什麼型別，但你可以用 `typeof` 關鍵字來檢查
 
 ```js
 let num = 1234;
-console.log(typeof(num)); // number
+console.log(typeof num); // number
 
 let floating_num = 12.34;
-console.log(typeof(num)); // number
+console.log(typeof num); // number
 ```
 
 JS 中把整數跟浮點數都歸類在 `number` 型別中喔！

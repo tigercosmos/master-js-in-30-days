@@ -45,7 +45,7 @@ let 某陣列 = [元素0, 元素1, 元素2, ... ];
 ```js
 const primes = [2, 3, 5, 7, 11, 13, 17];
 console.log(primes);
-console.log(typeof(primes));
+console.log(typeof primes);
 console.log(primes[0])
 console.log(primes[1])
 ```

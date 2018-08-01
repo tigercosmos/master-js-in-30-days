@@ -81,7 +81,7 @@ let person = {
     sex: "male"
 };
 
-console.log(typeof(person))
+console.log(typeof person)
 console.log(person)
 console.log(person.age)
 ```
@@ -321,7 +321,7 @@ const time = {
 };
 
 const timeJson = JSON.stringify(time);
-console.log(typeof(timeJson));
+console.log(typeof timeJson);
 console.log(timeJson);
 ```
 
@@ -344,7 +344,7 @@ string
 const timeJson = `{"year":2018,"month":"July","day":29,"hour":23,"minute":34,"second":53}`;
 
 const time = JSON.parse(timeJson);
-console.log(typeof(time));
+console.log(typeof time);
 console.log(time); // 已經是物件了，只是印出來其實就等於 JSON
 ```
 
