@@ -133,7 +133,7 @@ const girl = {
     },
     sayHello: function(who) {
         console.log(`Hello, ${who}!`);
-        this.getName;
+        this.getName();
     }
 };
 
@@ -286,7 +286,7 @@ const currentTime = {
     },
     time: {
         hour: 5,
-        minut: 44
+        minute: 44
     },
     nextDays: ["Wed", "Thu", "Fri"]
 }
