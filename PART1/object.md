@@ -126,14 +126,14 @@ const girl = {
     age: 21,
     sex: "female",
     isGirl: () => {
-        return self.sex == "female";
+        return this.sex == "female";
     },
     getName: function() {
         console.log(`I am ${this.name}!`);
     },
-    sayHello: who => {
+    sayHello: function(who) {
         console.log(`Hello, ${who}!`);
-        this.getName();
+        this.getName;
     }
 };
 
@@ -171,7 +171,7 @@ const thing = {
 }
 ```
 
-注意到不管是屬性或是方法，我們都會先定義名稱，然後如果是屬性，後面會接變數。如果是方法，後面會接函式，函式可以用 `function` 寫法也可以用 `()=>{}` 箭頭式寫法。此外物件中的方法，因為是函式，所以可以單純跑程式碼，也可以有回傳值。
+注意到不管是屬性或是方法，我們都會先定義名稱，然後如果是屬性，後面會接變數。如果是方法，後面會接函式，函式可以用 `function` 寫法也可以用 `()=>{}` 箭頭式寫法，兩種寫法有稍微差異，後面會解釋。此外物件中的方法，因為是函式，所以可以單純跑程式碼，也可以有回傳值。
 
 在 `ex2.js` 中有一段
 
@@ -187,7 +187,7 @@ const thing = {
 
 因此當我們執行 `girl.getName()` 的時候，這個方法會找到自己的屬性`name`，然後印出 `I am Jenny!`。
 
-我們再來看這段
+我們再來 `ex2.js` 這段：
 
 ```js
     isGirl: () => {
@@ -195,7 +195,9 @@ const thing = {
     },
 ```
 
-這段也是物件的方法，採用箭頭式函式，至於要用 `function` 還是箭頭端看個人喜好！我剛剛知道可以呼叫自己屬性，所以這邊在條件判斷 `self.sex` 是否為女生，是就回傳 `true`，反之回傳 `false`。所以當我們呼叫 `girl.isGirl()` 時候，會得到回傳值 `true`。
+這段也是物件的方法，採用箭頭式函式，至於要用 `function` 還是箭頭函式，大有學問！如果用箭頭函示 `()=>` 定義，物件的其他方法會無法透過 `this` 來使用這個箭頭函式做操作，必須是 `function()` 定義的方法，才是 `this` 可見。意思就是說，如果你想要讓某個方法**不能**被物件的其他方法讀取，就可以用箭頭函式。這邊牽扯到 `this` 的操作細節，因為比較進階和複雜，在之後章節會再加以介紹。
+
+我剛剛知道可以呼叫自己屬性，所以這邊在條件判斷 `self.sex` 是否為女生，是就回傳 `true`，反之回傳 `false`。所以當我們呼叫 `girl.isGirl()` 時候，會得到回傳值 `true`。
 
 這邊你可能會覺得很怪，為什麼不直接設定物件 `isGirl: true`？
 
@@ -205,18 +207,38 @@ const thing = {
 
 例如大雄可能有個屬性是「今天考試成績」，我們無法直接得知這個屬性，因為大雄不肯說（不公開）。但是大雄有個「大雄心情如何」的方法，任何人只要看得見大雄都知道他心情怎樣（公開），事實上「心情如何」是呼叫「今天考試成績」取得的答案（別懷疑，因為大雄現在只有這個煩惱）。
 
-另外我們在這段程式碼：
+另外我們在 `ex2.js` 這段程式碼：
 
 ```js
-    sayHello: who => {
+    sayHello: function(who) {
         console.log(`Hello, ${who}!`);
         this.getName();
     }
 ```
 
-發現物件的方法也可以呼叫自己的方法，在這例子中 `sayHello` 呼叫了自己的 `getName`，因為是呼叫自己所以要加上 `this`。
+發現物件的方法也可以呼叫自己的方法，在這例子中 `sayHello` 呼叫了自己的 `getName`，因為是呼叫自己所以要加上 `this`。記得我們剛剛提到過，必須是 `function()` 定義的方法，才能在其他方法中呼叫 `this.方法()`。否則會出現錯誤。
 
-所以物件方法可以呼叫自己的其他方法，也可以使用自己屬性，但只要是呼叫自己就要加上 `this`，如 `this.屬性` 或是 `this.方法()`。而如果從外面呼叫，則是使用 `物件名稱.屬性` 或是 `物件名稱.方法()`，例如 `girl.name` 和 `girl.sayHello("Tiger")`。
+舉一個會錯誤的例子，執行下面程式碼：
+
+```js
+const girl = {
+    name: "Jenny",
+    getName: () => {
+        console.log(`I am ${this.name}!`);
+    },
+    sayHello: who => {
+        console.log(`Hello, ${who}!`);
+        this.getName();
+    }
+};
+
+girl.sayHello("Tom");
+// TypeError: this.getName is not a function
+```
+
+此段程式碼會出現錯誤，因為在這邊 `getName()` 用箭頭式定義，無法被其他方法看到，因此當 `sayHello()` 嘗試去用 `this.getName()` 呼叫 `getName()` 時，會出現找不到這個函式的錯誤訊息。
+
+總結一下，所以物件方法可以呼叫自己的其他方法，也可以使用自己屬性，但只要是呼叫自己就要加上 `this`，如 `this.屬性` 或是 `this.方法()`。而如果從外面呼叫，則是使用 `物件名稱.屬性` 或是 `物件名稱.方法()`，例如 `girl.name` 和 `girl.sayHello("Tiger")`。
 
 關於物件方法與物件屬性的更複雜介紹與應用，在之後「物件導向」的章節會有更詳細的介紹。目前我們只要先認識這樣即可！
 
