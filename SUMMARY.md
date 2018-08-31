@@ -11,7 +11,7 @@
   - [條件判斷](PART1/condition.md)
   - [迴圈](PART1/loop.md)
   - [陣列](PART1/array.md)
-  - 函式(尚未)
+  - [函式](PART1/function.md)
   - [物件](PART1/object.md)
   - 遞迴(尚未)
   - 位元運算(尚未)
