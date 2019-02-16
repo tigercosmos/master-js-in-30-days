@@ -12,7 +12,7 @@
 
 就像下面這張圖一樣：
 
-糖果盒： ![array 1](img/array1.png)
+糖果盒： ![candy box](img/candy_box.jpeg)
 
 在這個例子中，我們有好多顆糖果，然後我們把糖果一顆一顆放進長條形盒子裡，這個概念就是陣列了！
 
@@ -312,7 +312,7 @@ console.log(names);
 - `shift()` 會把陣列中最前面一個元素移除
 - `unshift(元素)` 是把元素插入到陣列最前面的方法
 
-如圖所示：![array method](img/arraymethod.jpg)
+如圖所示：![array method](img/array_method.jpeg)
 
 在這幾個方式操作下，陣列本身並沒有改變，如同我剛剛形容班級，班級並不會因為一個學生轉走轉入而必須打散重組，所以我們可以用 `const` 定義陣列，並增加和移除元素。
 
