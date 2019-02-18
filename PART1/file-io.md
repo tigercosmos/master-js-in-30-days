@@ -181,7 +181,7 @@ const fs = require('fs');
 
 const stat = util.promisify(fs.stat); // 轉換 fs.state 變成 promise 型態
 
-(async () => { // 設定一個 async 函式，因為 await 一定要搭配 await
+(async () => { // 設定一個 async 函式，因為 await 一定要搭配 async
 
     // 只要在 async 區間裡面，所有 promise 型態的異步函數都可以用 await
     // 來讓他們變成同步
