@@ -14,7 +14,7 @@ Javascript 是目前世界上最重要且廣泛使用的程式語言之一，他
 
 ## 此書連結
 
-- [網頁版連結](http://tigercosmos.xyz/master-js-in-30-days/)
+- [網頁版連結](https://tigercosmos.github.io/master-js-in-30-days/)
 - （待補）電子版下載
 
 ## 授權
