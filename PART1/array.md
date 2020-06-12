@@ -150,7 +150,7 @@ const children = [12, 14, 12, 16, 13, 8, 9];
 ```js
 const children = [12, 14, 12, 16, 13, 8, 9];
 
-for(let i = 0; i< children.length; i++) {
+for(let i = 0; i < children.length; i++) {
     if(children[i] <= 12) {
         console.log(`第 ${i} 個小朋友：半票`);
     } else {
@@ -174,7 +174,7 @@ $ node ex5.js
 
 `children.length` 是取得陣列長度的意思，因為陣列是從 0 開始數，所以條件是 `i < 長度`，仔細想想就會知道，現在這個例子小孩有 7 個，所以我們是 0～6，因此條件這樣設正確無誤。
 
-當我們單存只是想要重複跑好多遍的時候，初始值跟條件邊界可以隨便設定，只要數量依樣就好。例如 0～5 和 10～15 數量都一樣，假設我們只是想印出好多個「我愛你」，這樣的情況下就沒差。
+當我們單純只是想要重複跑好多遍的時候，初始值跟條件邊界可以隨便設定，只要數量依樣就好。例如 0～5 和 10～15 數量都一樣，假設我們只是想印出好多個「我愛你」，這樣的情況下就沒差。
 
 但是如果是針對陣列在列舉，因為陣列必定從 0 開始排起，假設你要把整個陣列都數一遍，記住一定要從 0 開始，並且陣列的最後一個元素的編號是 `array.length - 1`。
 
@@ -252,7 +252,7 @@ const arr1 = [1, 2, 3];
 const arr2 = [...arr1];
 
 arr1[0] = 40;
-console.log(arr2[0]); // 1，並沒有因為 arr1 改了 而改變
+console.log(arr2[0]); // 1，並沒有因為 arr1 改了而更動
 ```
 
 `...array` 是直接複製目標 `array` 的語法。
@@ -299,7 +299,7 @@ console.log(names);
 執行 `ex5.js`：
 
 ```log
-$ node ex2.js
+$ node ex2.js
 [ 'A', 'B' ]       // 原本的
 [ 'A', 'B', 'D' ]  // 後面加入 D 後
 [ 'A', 'B' ]       // 移除最後面的元素後
@@ -327,7 +327,7 @@ const origin = [1, 2, 3, 4, 5, 6, 7];
 const part1 = origin.slice(0, 4); // 擷取 origin 編號 0 到 4 間的元素
                                   // 1, 2, 3, 4 (不包含編號 4，所以沒 5)
 
-const part2 = origin.slice(5, 6); // 擷取 origin 編號 5 到 7 間的元素
+const part2 = origin.slice(5, 7); // 擷取 origin 編號 5 到 7 間的元素
                                   // 6, 7
 
 const newArr = [...part1, 44, 55, ...part2];
@@ -343,7 +343,7 @@ console.log(newArr);
 ```js
 const children = [12, 14, 12, 16, 13, 8, 9];
 
-for(let i = 0; i< children.length; i++) {
+for(let i = 0; i < children.length; i++) {
     children.push(10);
 }
 
