@@ -76,7 +76,7 @@ if(x > 5) // if x is greater than 5
 if(x >= 5) // if x is greater than 5
 if(x < 5) // if x is smaller than 5
 if(x <= 5) // if x is smaller than 5
-if(x == 5 ) // if x is equal to 5
+if(x == 5) // if x is equal to 5
 if(x != 5) // if x is not equal to 5
 ```
 
@@ -163,7 +163,7 @@ if(score >= 80) {
 
 但有時候我們要判斷的東西可能並不單純。
 
-今天有個女孩宜臻，他要進電影院看限制級（大於 18 歲方可觀賞）的血腥僵屍片。這時候售票員要檢查，宜臻已經成年且宜蓁有買票，宜蓁才能進去看電影。
+今天有個女孩宜臻，他要進電影院看限制級（大於 18 歲方可觀賞）的血腥殭屍片。這時候售票員要檢查，宜臻已經成年且宜臻有買票，宜臻才能進去看電影。
 
 剛剛我們提到了「且」的概念，這便是邏輯條件了。
 
@@ -175,7 +175,7 @@ if(score >= 80) {
 成年 && 有票        =>   成年 且 有票
 成年 || 有票        =>   成年 或 有票
 !成年              =>   未成年
-!(有成年 && 有票)   =>   非（成年 且 有票），等同（未成年 且 沒票）
+!(有成年 && 有票)   =>   非（成年 且 有票），等同（未成年 或 沒票）
 ```
 
 所以假設我們要找到等第為 B 的學生，因為 B 介於 50 到 80 之間，我們就可以用「且」邏輯把兩個判斷條件綁在一起。
@@ -246,7 +246,7 @@ if(!x) {
 
 如果在條件判斷的地方只放入「非」單一個變數，程式就知道你是在問他 `x!=true` 了，或是等同 `x == false`。
 
-以下舉例各種情況，條件通過為 true，不通過為 `false`：
+以下舉例各種情況，條件通過為 `true`，不通過為 `false`：
 
 ```js
 if(5) // true
@@ -278,9 +278,9 @@ if(!x) {
 
 ```js
 if(something) {
-    const name = "tiger"
+    const name = "tiger";
 }
-console.log(name) // ReferenceError: name is not defined
+console.log(name); // ReferenceError: name is not defined
 ```
 
 執行上面程式碼，會出現錯誤，因為 `name` 在 `if(){ }` 結束時就被銷毀，但是 `console.log` 卻在 `if` 結束後，也就是 `name` 被銷毀了，才去呼叫 `name`。
@@ -290,9 +290,9 @@ console.log(name) // ReferenceError: name is not defined
 ```js
 let name = "";
 if(something) {
-    name = "tiger"
+    name = "tiger";
 }
-console.log(name) // OK
+console.log(name); // OK
 ```
 
 簡單來說變數的生命只有在他被宣告的 `{ }` 裡面，`{ }` 可能是來自 `if`、`else` 或是下一章會提到的 `for` 皆是如此，離開 `{ }` 也代表變數死亡。
@@ -305,9 +305,9 @@ console.log(name) // OK
 if(something) {
     let name = "Coco";
     if(other) {
-        console.log(name) // 沒問題，name 的層級比被呼叫還要高
+        console.log(name); // 沒問題，name 的層級比被呼叫還要高
     }
-    console.log(name) // 沒問題，name 的層級跟被呼叫時一樣高
+    console.log(name); // 沒問題，name 的層級跟被呼叫時一樣高
 }
 ```
 
