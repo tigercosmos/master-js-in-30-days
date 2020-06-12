@@ -4,6 +4,10 @@
 
 這是一本給初學者的 Javascript 教學書，落實閱讀與練習持續 30 天，進入 JavaScript 的世界！
 
+## 公告
+
+這本書內容已經轉到新網站 tigercosmos.xyz，日後更新都會在那邊，這邊將進行封存。
+
 ## 作者
 
 [劉安齊](http://tigercosmos.xyz/)：軟體工程師，以 [＠tigercosmos](https://github.com/tigercosmos) 活躍於網路世界。喜歡分享程式開發知識，著有多篇技術文，並經營有「[微中子](https://www.facebook.com/CodingNeutrino/)」科技分享臉書粉專。
